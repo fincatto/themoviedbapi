@@ -19,7 +19,7 @@ Just add it as dependency to your project. It's available via [jcenter](https://
 <dependency>
     <groupId>info.movito</groupId>
     <artifactId>themoviedbapi</artifactId>
-    <version>1.6</version>
+    <version>1.7</version>
 </dependency>
 ```
 Read the [Set me up](https://bintray.com/bintray/jcenter) section first, if you haven't addded jcenter as a repository to your pom.xml yet.
@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies{
-    compile group: 'info.movito', name: 'themoviedbapi', version:'1.6'
+    compile group: 'info.movito', name: 'themoviedbapi', version:'1.7'
 }
 ```
 
@@ -59,14 +59,14 @@ Most common question: Why does `getSomething()` returns null?
 
 Every API element has a number of query flags that need to be set in order to pull a particular piece of information.
 
-#### Example1: Make `getCast()` to return cast and not `null` 
+#### Example 1: Make `getCast()` to return cast and not `null` 
 
 ```
 TmdbMovies movies = tmdbApi.getMovies();
 movies.getMovie(293660, "en", MovieMethod.credits)
 ```
 
-#### Example 3: Get image urls, videos and similar movies
+#### Example 2: Get image urls, videos and similar movies
 ```
 TmdbMovies movies = tmdbApi.getMovies();
 movies.getMovie(78, "en", MovieMethod.credits, MovieMethod.images, MovieMethod.similar)
