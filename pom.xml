@@ -28,6 +28,17 @@
         <version.slf4j>1.7.7</version.slf4j>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>maven.wmixvideo.com.br</id>
+            <url>s3://maven.wmixvideo.com.br/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven.wmixvideo.com.br</id>
+            <url>s3://maven.wmixvideo.com.br/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
 
         <!--JSON-->
@@ -136,8 +147,15 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
-
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
+
     </build>
 
 </project>
